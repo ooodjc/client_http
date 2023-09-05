@@ -20,14 +20,15 @@ func main() {
 
 func httpPost() {
 	//post http请求，自定义请求头
-	url := "http://localhost:8080/Insert"
+	//url := "http://localhost:8080/Insert"
+	url := "http://localhost:8080/GoodsInfoAll"
 	token := "your-x-token"
 
 	// 创建一个请求体
 	body := make(map[string]string)
 	body["tableName"] = "goods_info"
 	body["columnName"] = "id,name,yj,hyj,jj,cls,stock"
-	body["data"] = "(10,'cs',1,1,1,'1',1), (11,'cs',1,1,1,'1',1), (12,'cs',1,1,1,'1',1)"
+	body["data"] = "" //"(10,'cs',1,1,1,'1',1), (11,'cs',1,1,1,'1',1), (12,'cs',1,1,1,'1',1)"
 
 	//map转[]byte
 	bodyByte, _ := json.Marshal(body)
